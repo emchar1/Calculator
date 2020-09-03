@@ -9,13 +9,20 @@
 import UIKit
 
 class numberButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        let minLength = max(bounds.width, bounds.height)
+        print(bounds.width)
+        print(bounds.height)
+        backgroundColor = .red
+        layer.cornerRadius = 0.5 * minLength - 0.06 * minLength
+        print(layer.cornerRadius)
+        bounds.size.height = minLength
+//        frame.size = CGSize(width: minLength, height: minLength)
+        clipsToBounds = true
     }
-    */
+    
 
 }
