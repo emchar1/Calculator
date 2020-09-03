@@ -74,6 +74,10 @@ struct CalculatorLogic {
 
         switch operation {
         case "+/-":
+            guard operand != "0" else {
+                return
+            }
+            
             isDoneEnteringDigits = false
             result *= -1
             
